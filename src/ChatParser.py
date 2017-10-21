@@ -8,6 +8,8 @@ or in the "license" file accompanying this file. This file is distributed on an 
 import sys
 import irc.bot
 import requests
+from flask import Flask
+
 from threading import Timer, Thread
 
 global K
@@ -17,6 +19,7 @@ global B
 global J
 global F
 global K_P
+global fighting
 K = 0
 L = 0
 P = 0
@@ -24,6 +27,7 @@ B = 0
 J = 0
 F = 0
 K_P = 0
+fighting = 1
 
 class TwitchBot(irc.bot.SingleServerIRCBot):
     def __init__(self, username, client_id, token, channel, updateEmotes):
@@ -110,7 +114,6 @@ def main():
     token = sys.argv[3]
     channel = sys.argv[4]
 
-    emotes = {}
 
     def updateEmotes(emote):
         if emote == 'Kappa':
@@ -138,36 +141,45 @@ def main():
 
 
     def printEmotes():
+
         global K
+        print('Kappas')
         print(K)
         K = 0
 
         global L
+        print('LULs')
         print(L)
         L = 0
 
         global P
+        print('PogChamps')
         print(P)
         P = 0
 
         global B
+        print('BlessRNGs')
         print(B)
         B = 0
 
         global J
+        print('Jebaiteds')
         print(J)
         J = 0
 
         global F
+        print('FrankerZ')
         print(F)
         F = 0
 
         global K_P
+        print('KappaPrides')
         print(K_P)
         K_P = 0
 
         interval = Timer(30, printEmotes)
         interval.start()
+
     #while loop goes here
 
     printEmotes()
