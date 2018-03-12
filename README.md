@@ -20,4 +20,6 @@ And another showing some more combat:
 
 ![Alt Text](https://i.gyazo.com/a3b5e5d20efe07c913748ed2898a0002.gif)
 
+To run this game, you'll need to have a Python compiler and the Pygame library installed. [Here's a link to the Pygame Website with Instructions](https://www.pygame.org/wiki/GettingStarted)
+
 Thank you for looking at our game!
